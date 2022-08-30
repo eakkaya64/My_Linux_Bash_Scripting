@@ -1,0 +1,22 @@
+#!/bin/bash
+read -p "enter your name: " NAME
+read -p "enter your age: " AGE
+read -p "what is your avg life expectancy: " ALE
+if [[ $AGE -lt 18 ]]
+then
+ echo "Student"
+ echo "At least $((18-AGE)) yeas to become a worker."
+elif [[ $AGE -ge 18 ]] && [[ $AGE -lt 65 ]]
+then
+ echo "Worker"
+ echo "$((65-AGE)) years to retire."
+else
+ if [[ $AGE -lt $ALE ]]
+ then
+  echo "Retired"
+  echo "$((ALE-AGE)) years to die."
+ else
+  echo -ne '\007'
+  echo "Already to die"
+ fi 
+fi 

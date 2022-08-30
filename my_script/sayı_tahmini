@@ -1,0 +1,16 @@
+#!/bin/bash
+rnd_num=$(( $RANDOM % 20))
+while [[ True ]]
+do
+   read -p "0-20 arasında bir sayı tahmin ediniz:" SAYI
+if (( $rnd_num==$SAYI ))
+then
+    echo "Tebrikler..."
+    break
+elif (( $rnd_num>$SAYI ))  
+then
+    echo "Tahmininizi artırın..."
+else
+    echo "Tahmininizi azaltın..."
+fi    
+done
